@@ -1,21 +1,13 @@
 /*
 	This is the Geb configuration file.
 	
-	See: http://www.gebish.org/manual/current/configuration.html
+	See: http://www.gebish.org/manual/current/#configuration
 */
 
-import org.openqa.selenium.htmlunit.HtmlUnitDriver
-import org.openqa.selenium.firefox.FirefoxDriver
-import org.openqa.selenium.chrome.ChromeDriver
 
-// Use htmlunit as the default
-// run via “./gradlew htmlunitTest”
-// See: http://code.google.com/p/selenium/wiki/HtmlUnitDriver
-driver = { 
-	def driver = new HtmlUnitDriver()
-	driver.javascriptEnabled = true
-	driver
-}
+import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.phantomjs.PhantomJSDriver
 
 waiting {
 	timeout = 2
@@ -35,6 +27,12 @@ environments {
 		driver = { new FirefoxDriver() }
 	}
 
+    phantomJs {
+        driver = { new PhantomJSDriver() }
+    }
+
 }
 
 // To run the tests with all browsers just run “./gradlew test”
+
+baseUrl = "http://gebish.org"
