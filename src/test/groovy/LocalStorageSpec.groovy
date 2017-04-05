@@ -1,11 +1,11 @@
 import geb.spock.GebReportingSpec
 
 class LocalStorageSpec extends GebReportingSpec {
+    def setup() {
+      go ""
+    }
 
     def "set item"() {
-      given:
-      go ""
-
       when:
       js.exec "localStorage.setItem('dummy', 'dummy');"
 
@@ -14,9 +14,6 @@ class LocalStorageSpec extends GebReportingSpec {
     }
 
     def "remove item"() {
-      given:
-      go ""
-
       when:
       js.exec "localStorage.setItem('dummy', 'dummy');"
 
@@ -28,9 +25,6 @@ class LocalStorageSpec extends GebReportingSpec {
     }
 
     def "clear item"() {
-      given:
-      go ""
-
       when:
       js.exec "localStorage.setItem('dummy', 'dummy');"
 
