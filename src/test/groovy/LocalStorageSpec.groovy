@@ -11,12 +11,25 @@ class LocalStorageSpec extends GebReportingSpec {
 
       then:
       js. "localStorage.getItem('dummy')" == "dummy"
+    }
+
+    def "remove item"() {
+      given:
+      go ""
 
       when:
+      js.exec "localStorage.setItem('dummy', 'dummy');"
+
+      and:
       js.exec "localStorage.removeItem('dummy')"
 
       then:
       js. "localStorage.getItem('dummy')" == null
+    }
+
+    def "clear item"() {
+      given:
+      go ""
 
       when:
       js.exec "localStorage.setItem('dummy', 'dummy');"
@@ -27,4 +40,5 @@ class LocalStorageSpec extends GebReportingSpec {
       then:
       js. "localStorage.getItem('dummy')" == null
     }
+
 }
