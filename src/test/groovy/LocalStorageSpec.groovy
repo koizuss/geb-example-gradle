@@ -10,6 +10,21 @@ class LocalStorageSpec extends GebReportingSpec {
       js.exec "window.localStorage.setItem('dummy', 'dummy');"
 
       then:
-      js. "window.localStorage.getItem('dummy')" == ""
+      js. "window.localStorage.getItem('dummy')" == "dummy"
+
+      when:
+      js.exec "window.localStorage.removeItem('dummy')"
+
+      then:
+      js. "window.localStorage.getItem('dummy')" == null
+
+      when:
+      js.exec "window.localStorage.setItem('dummy', 'dummy');"
+
+      and:
+      js.exec "window.localStorage.clear()"
+
+      then:
+      js. "window.localStorage.getItem('dummy')" == null
     }
 }
