@@ -4,13 +4,7 @@ build:
     - script:
       name: setup
       code: |
-        apt-get install -y nodejs npm
-        npm cache clean
-        npm install n -g
-        n stable
-        ln -sf /usr/local/bin/node /usr/bin/node
-        node -v
-        apt-get purge -y nodejs npm
+        apt-get install -y git
     - script:
       name: build
       code: |
