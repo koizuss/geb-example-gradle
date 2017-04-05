@@ -6,7 +6,7 @@ build:
       code: |
         ./install_node
         npm install -g node-static
-        static
+        static < /dev/null &
     - script:
       name: build
       code: |
