@@ -4,4 +4,4 @@ build:
     - script:
       name: build
       code: |
-        ./gradlew pJT -i
+        ./gradlew pJT -i --tests LocalStorageSpec
