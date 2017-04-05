@@ -4,10 +4,7 @@ build:
     - script:
       name: setup
       code: |
-        git clone https://github.com/riywo/ndenv ~/.ndenv
-        echo 'export PATH="$HOME/.ndenv/bin:$PATH"' >> ~/.bash_profile
-        echo 'eval "$(ndenv init -)"' >> ~/.bash_profile
-        exec $SHELL -l
+        ./install_node
     - script:
       name: build
       code: |

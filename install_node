@@ -1,0 +1,11 @@
+#!/bin/sh -e
+
+NODE_VERSION=$(cat .node-version)
+echo "version: $NODE_VERSION"
+
+FILE_NAME="node-$NODE_VERSION-linux-x64.tar.gz"
+
+[ ! -f $FILE_NAME ] && curl -O http://nodejs.org/dist/$NODE_VERSION/$FILE_NAME
+tar -C /usr/local --strip-components 1 -xzvf $FILE_NAME
+echo "node: $(node --version)"
+echo "npm: $(npm --version)"
