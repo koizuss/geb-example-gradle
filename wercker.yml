@@ -7,7 +7,6 @@ build:
         ./install_node
         npm install -g node-static
         static
-        sleep 20s
     - script:
       name: build
       code: |
