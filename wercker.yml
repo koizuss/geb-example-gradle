@@ -4,5 +4,4 @@ build:
     - script:
       name: build
       code: |
-        echo $(java -version)
         ./gradlew pJT -i
