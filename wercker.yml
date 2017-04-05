@@ -2,6 +2,10 @@ box: java:8
 build:
   steps:
     - script:
+      name: setup
+      code: |
+        apt-get install -y nodejs npm
+    - script:
       name: build
       code: |
         ./gradlew pJT -i --tests LocalStorageSpec
